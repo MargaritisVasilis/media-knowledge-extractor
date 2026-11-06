@@ -6,7 +6,7 @@ def transcribe_audio_mlx(audio_path: str) -> list[dict]:
 
     result = mlx_whisper.transcribe(
         audio_path,
-        path_or_hf_repo="mlx-community/whisper-small-mlx",
+        path_or_hf_repo="mlx-community/whisper-medium-mlx",
         language=None
     )
 
