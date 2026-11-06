@@ -25,3 +25,13 @@ def process_media(file_path: str) -> list[dict]:
         segments = transcribe(str(audio_path))
 
     return segments
+
+from mke.export import export_transcript
+
+
+def process_and_export(file_path: str, output_path: str) -> None:
+    """Process media and save the transcription."""
+
+    segments = process_media(file_path)
+
+    export_transcript(segments, output_path)
