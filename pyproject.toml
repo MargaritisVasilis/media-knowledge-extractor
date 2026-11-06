@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "media-knowledge-extractor"
+version = "0.1.0"
+description = "Local-first media transcription and knowledge extraction"
+requires-python = ">=3.11"
+dependencies = [
+    "faster-whisper>=1.2.1",
+]
+
+[project.optional-dependencies]
+apple = [
+    "mlx-whisper>=0.4.3",
+]
+
+[project.scripts]
+mke = "mke.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
